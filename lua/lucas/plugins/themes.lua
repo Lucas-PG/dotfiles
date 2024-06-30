@@ -7,6 +7,14 @@ return {
 			})
 		end,
 	},
+	{
+		"craftzdog/solarized-osaka.nvim",
+		config = function()
+			require("solarized-osaka").setup({
+				transparent = false,
+			})
+		end,
+	},
 	"nyngwang/nvimgelion",
 	"EdenEast/nightfox.nvim",
 	"bluz71/vim-nightfly-colors",
@@ -20,5 +28,9 @@ return {
 	"rose-pine/neovim",
 	"Mofiqul/vscode.nvim",
 	"shaunsingh/nord.nvim",
+	"shaunsingh/moonlight.nvim",
+	"kdheepak/monochrome.nvim",
+	"nyoom-engineering/oxocarbon.nvim",
+	"AlexvZyl/nordic.nvim",
+	"patstockwell/vim-monokai-tasty",
 }
-
