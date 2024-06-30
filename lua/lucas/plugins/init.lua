@@ -19,7 +19,7 @@ return {
 			require("colorizer").setup()
 		end,
 	},
-	{'akinsho/toggleterm.nvim', version = "*", config = true},
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	"sindrets/diffview.nvim",
 	"nvim-pack/nvim-spectre",
 }
