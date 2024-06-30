@@ -1,6 +1,7 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
   "LuaSnip": { "branch": "master", "commit": "03c8e67eb7293c404845b3982db895d59c0d1538" },
+  "auto-session": { "branch": "main", "commit": "879f5b30207bd53101e1034ca91330f23746f601" },
   "awesome-vim-colorschemes": { "branch": "master", "commit": "ae5e02298c8de6a5aa98fe4d29a21874cfcc3619" },
   "blamer.nvim": { "branch": "master", "commit": "e0d43c11697300eb68f00d69df8b87deb0bf52dc" },
   "bufferline.nvim": { "branch": "main", "commit": "99337f63f0a3c3ab9519f3d1da7618ca4f91cffe" },
