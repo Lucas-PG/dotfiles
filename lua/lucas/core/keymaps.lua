@@ -145,7 +145,8 @@ map("n", "<leader>ll", "<CMD>VimtexCompile<CR>", { desc = "compile latex (.tex) 
 
 -- DiffView
 map("n", "<leader>dvh", "<CMD>DiffviewFileHistory<CR>", { desc = "view file commit history" })
-map("n", "<leader>dvc", "<CMD>DiffviewClose<CR>", { desc = "close file commit history" })
+map("n", "<leader>dvc", "<CMD>DiffviewClose<CR>", { desc = "close diff view" })
+map("n", "<leader>dvo", "<CMD>DiffviewOpen<CR>", { desc = "open diff view"})
 
 -- Markdown preview
 map("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", { desc = "start markdown preview" })
