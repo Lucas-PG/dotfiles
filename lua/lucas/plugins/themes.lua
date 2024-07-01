@@ -33,4 +33,9 @@ return {
 	"nyoom-engineering/oxocarbon.nvim",
 	"AlexvZyl/nordic.nvim",
 	"patstockwell/vim-monokai-tasty",
+	"NLKNguyen/papercolor-theme",
+	"sonph/onehalf",
+	"sjl/badwolf",
+	"jacoborus/tender.vim",
+	"srcery-colors/srcery-vim",
 }
