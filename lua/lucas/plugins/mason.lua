@@ -68,7 +68,6 @@ return {
         "djlint",
         "ltex-ls",
         "texlab",
-        "java-language-server",
         "jdtls",
         "pyright",
         "pylint",
