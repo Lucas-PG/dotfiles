@@ -40,4 +40,6 @@ return {
 	"srcery-colors/srcery-vim",
 	"projekt0n/github-nvim-theme",
 	"pineapplegiant/spaceduck",
+	"catppuccin/nvim",
+	"haishanh/night-owl.vim",
 }
