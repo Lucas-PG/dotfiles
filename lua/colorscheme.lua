@@ -1,1 +1,1 @@
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme github_dark_dimmed")

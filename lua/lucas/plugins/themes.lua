@@ -38,4 +38,6 @@ return {
 	"sjl/badwolf",
 	"jacoborus/tender.vim",
 	"srcery-colors/srcery-vim",
+	"projekt0n/github-nvim-theme",
+	"pineapplegiant/spaceduck",
 }
