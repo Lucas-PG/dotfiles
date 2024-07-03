@@ -22,4 +22,11 @@ return {
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	"sindrets/diffview.nvim",
 	"nvim-pack/nvim-spectre",
+	{
+
+		"ggandor/leap.nvim",
+		config = function()
+			require("leap").create_default_mappings()
+		end,
+	},
 }
