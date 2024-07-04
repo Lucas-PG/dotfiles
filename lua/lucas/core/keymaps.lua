@@ -45,9 +45,9 @@ map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
 
-map("n", "<leader>fm", function()
-	require("conform").format({ lsp_fallback = true })
-end, { desc = "format files" })
+-- map("n", "<leader>fm", function()
+-- 	require("conform").format({ lsp_fallback = true })
+-- end, { desc = "format files" })
 
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
@@ -182,3 +182,5 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 	desc = "Search on current file",
 })
 
+-- Fuck my Life
+map("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")

@@ -30,4 +30,5 @@ return {
 		end,
 	},
 	"RRethy/vim-illuminate",
+	"eandrju/cellular-automaton.nvim",
 }
