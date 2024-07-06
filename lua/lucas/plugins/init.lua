@@ -29,4 +29,6 @@ return {
 			require("leap").create_default_mappings()
 		end,
 	},
+	"RRethy/vim-illuminate",
+	"eandrju/cellular-automaton.nvim",
 }

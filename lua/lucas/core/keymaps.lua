@@ -45,9 +45,9 @@ map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
 
-map("n", "<leader>fm", function()
-	require("conform").format({ lsp_fallback = true })
-end, { desc = "format files" })
+-- map("n", "<leader>fm", function()
+-- 	require("conform").format({ lsp_fallback = true })
+-- end, { desc = "format files" })
 
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
@@ -146,12 +146,11 @@ map("n", "<leader>ll", "<CMD>VimtexCompile<CR>", { desc = "compile latex (.tex) 
 -- DiffView
 map("n", "<leader>dvh", "<CMD>DiffviewFileHistory<CR>", { desc = "view file commit history" })
 map("n", "<leader>dvc", "<CMD>DiffviewClose<CR>", { desc = "close diff view" })
-map("n", "<leader>dvo", "<CMD>DiffviewOpen<CR>", { desc = "open diff view"})
+map("n", "<leader>dvo", "<CMD>DiffviewOpen<CR>", { desc = "open diff view" })
 
 -- Markdown preview
 map("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", { desc = "start markdown preview" })
 map("n", "<leader>mx", "<CMD>MarkdownPreviewStop<CR>", { desc = "stop markdown preview" })
-
 
 -- Close buffer
 map("n", "<leader>x", "<CMD>q<CR>")
@@ -163,8 +162,8 @@ map("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
 
 map("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 map("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
-map("n", '<Tab>', "<cmd>tabn<CR>", { desc = "Go to next tab" })
-map("n", '<S-Tab>', "<cmd>tabp<CR>", { desc = "Go to previous tab" })
+map("n", "<Tab>", "<cmd>tabn<CR>", { desc = "Go to next tab" })
+map("n", "<S-Tab>", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 map("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 map("n", "<leader>n", "<cmd>ToggleTerm<cr>")
@@ -172,15 +171,16 @@ map("n", "<leader>n", "<cmd>ToggleTerm<cr>")
 -- Spectre
 map("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
 	desc = "Toggle Spectre",
-  })
-  map("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+})
+map("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
 	desc = "Search current word",
-  })
-  map("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+})
+map("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
 	desc = "Search current word",
-  })
-  map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+})
+map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
 	desc = "Search on current file",
-  })
+})
 
-  
+-- Fuck my Life
+map("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")

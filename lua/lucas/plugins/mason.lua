@@ -70,6 +70,10 @@ return {
 				"jdtls",
 				"pyright",
 				"pylint",
+				"actionlint",
+				"clang-format",
+				"cpptools",
+				"clangd",
 			},
 		})
 	end,

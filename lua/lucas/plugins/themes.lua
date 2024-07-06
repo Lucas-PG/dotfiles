@@ -42,4 +42,5 @@ return {
 	"pineapplegiant/spaceduck",
 	"catppuccin/nvim",
 	"haishanh/night-owl.vim",
+	"sainnhe/everforest",
 }
