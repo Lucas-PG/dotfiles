@@ -43,4 +43,5 @@ return {
 	"catppuccin/nvim",
 	"haishanh/night-owl.vim",
 	"sainnhe/everforest",
+	"thedenisnikulin/vim-cyberpunk",
 }
