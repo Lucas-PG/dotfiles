@@ -41,5 +41,9 @@ return {
 				timeout_ms = 1000,
 			})
 		end, { desc = "Format file or range (in visual mode)" })
+
+		conform.formatters.shfmt = {
+			append_args = { "-i", "4" },
+		}
 	end,
 }
