@@ -44,4 +44,6 @@ return {
 	"haishanh/night-owl.vim",
 	"sainnhe/everforest",
 	"thedenisnikulin/vim-cyberpunk",
+	-- "flazz/vim-colorschemes",
+	"itchyny/landscape.vim",
 }
