@@ -46,4 +46,5 @@ return {
 	"thedenisnikulin/vim-cyberpunk",
 	-- "flazz/vim-colorschemes",
 	"itchyny/landscape.vim",
+	"folke/tokyonight.nvim",
 }
