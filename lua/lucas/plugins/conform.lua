@@ -15,7 +15,7 @@ return {
 				typescriptreact = { "prettier" },
 				svelte = { "prettier" },
 				json = { "prettier" },
-				yaml = { "prettier" },
+				yaml = { "prettier_yaml" },
 				markdown = { "prettier" },
 				graphql = { "prettier" },
 				liquid = { "prettier" },
@@ -41,6 +41,12 @@ return {
 				timeout_ms = 1000,
 			})
 		end, { desc = "Format file or range (in visual mode)" })
+
+		-- Custom Prettier configuration for YAML files
+		conform.formatters.prettier_yaml = {
+			command = "prettier",
+			args = { "--parser", "yaml", "--single-quote", "false" },
+		}
 
 		conform.formatters.shfmt = {
 			append_args = { "-i", "4" },
