@@ -7,6 +7,17 @@ return {
 		sign_priority = 8, -- sign priority
 		-- keywords recognized as todo comments
 		keywords = {
+			-- FIX:
+			-- TODO:
+			-- HACK:
+			-- WARN:
+			-- PERF:
+			-- NOTE:
+			-- TEST:
+			-- DONE:
+			-- WTF:
+			-- REVIEW:
+
 			FIX = {
 				icon = " ", -- icon used for the sign, and in search results
 				color = "#DC2626", -- can be a hex color, or a named color (see below)
@@ -20,6 +31,8 @@ return {
 			NOTE = { icon = " ", color = "#10B981", alt = { "INFO" } },
 			TEST = { icon = "⏲ ", color = "#FF00FF", alt = { "TESTING", "PASSED", "FAILED" } },
 			DONE = { icon = "✓", color = "#35fc03", alt = { "FEITO" } },
+			WTF = { icon = "", color = "#FF0000", alt = { "WTH" } },
+			REVIEW = { icon = "", color = "#FF4500", alt = { "REVIEWED", "LOOK" } },
 		},
 		gui_style = {
 			fg = "NONE", -- The gui style to use for the fg highlight group.
