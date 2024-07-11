@@ -47,4 +47,7 @@ return {
 	-- "flazz/vim-colorschemes",
 	"itchyny/landscape.vim",
 	"folke/tokyonight.nvim",
+	"Mofiqul/dracula.nvim",
+	"Mofiqul/adwaita.nvim",
+	"franbach/miramare",
 }
