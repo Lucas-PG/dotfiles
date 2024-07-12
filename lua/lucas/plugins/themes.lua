@@ -50,4 +50,5 @@ return {
 	"Mofiqul/dracula.nvim",
 	"Mofiqul/adwaita.nvim",
 	"franbach/miramare",
+	"Badacadabra/vim-archery",
 }
