@@ -87,7 +87,7 @@ map(
 )
 
 -- terminal
-map("t", "<esc>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
+map("t", "<C-q>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
 -- new terminals
 -- map("n", "<leader>h", function()
