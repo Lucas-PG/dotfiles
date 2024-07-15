@@ -153,19 +153,19 @@ return {
 					on_attach = on_attach,
 				})
 			end,
-			["ansiblels"] = function()
-				lspconfig["ansiblels"].setup({
-					cmd = { "ansible-language-server" },
-					filetypes = { "yaml", "yml" },
-					settings = {
-						ansible = {
-							validation = {
-								enabled = true,
-							},
-						},
-					},
-				})
-			end,
+			-- ["ansiblels"] = function()
+			-- 	lspconfig["ansiblels"].setup({
+			-- 		cmd = { "ansible-language-server" },
+			-- 		filetypes = { "yaml", "yml" },
+			-- 		settings = {
+			-- 			ansible = {
+			-- 				validation = {
+			-- 					enabled = true,
+			-- 				},
+			-- 			},
+			-- 		},
+			-- 	})
+			-- end,
 		})
 	end,
 }
