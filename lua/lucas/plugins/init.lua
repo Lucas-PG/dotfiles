@@ -2,7 +2,15 @@ return {
 	"APZelos/blamer.nvim",
 	"sindrets/diffview.nvim",
 	"tpope/vim-fugitive",
-	"rcarriga/nvim-notify",
+	{
+		"rcarriga/nvim-notify",
+		-- config = function()
+		-- 	require("notify").setup({
+		-- 		background_colour = #000000,
+		-- 	})
+		-- end,
+	},
+
 	"ThePrimeagen/vim-be-good",
 	"rafi/awesome-vim-colorschemes",
 	"nvim-telescope/telescope.nvim",
