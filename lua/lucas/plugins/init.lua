@@ -12,7 +12,6 @@ return {
 	},
 
 	"ThePrimeagen/vim-be-good",
-	"rafi/awesome-vim-colorschemes",
 	"nvim-telescope/telescope.nvim",
 	"nvim-lua/plenary.nvim",
 	{

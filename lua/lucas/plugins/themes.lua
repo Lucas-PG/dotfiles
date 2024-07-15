@@ -1,4 +1,5 @@
 return {
+	"rafi/awesome-vim-colorschemes",
 	{
 		"scottmckendry/cyberdream.nvim",
 		config = function()
