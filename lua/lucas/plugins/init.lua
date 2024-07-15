@@ -4,11 +4,11 @@ return {
 	"tpope/vim-fugitive",
 	{
 		"rcarriga/nvim-notify",
-		-- config = function()
-		-- 	require("notify").setup({
-		-- 		background_colour = #000000,
-		-- 	})
-		-- end,
+		config = function()
+			require("notify").setup({
+				background_colour = "#000000",
+			})
+		end,
 	},
 
 	"ThePrimeagen/vim-be-good",
