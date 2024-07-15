@@ -74,8 +74,8 @@ return {
 				"clang-format",
 				"cpptools",
 				"clangd",
-				"yaml-language-server",
-				"yamllint",
+				-- "yaml-language-server",
+				-- "yamllint",
 			},
 		})
 	end,
