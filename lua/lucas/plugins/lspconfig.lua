@@ -153,19 +153,34 @@ return {
 					on_attach = on_attach,
 				})
 			end,
-			-- ["ansiblels"] = function()
-			-- 	lspconfig["ansiblels"].setup({
-			-- 		cmd = { "ansible-language-server" },
-			-- 		filetypes = { "yaml", "yml" },
-			-- 		settings = {
-			-- 			ansible = {
-			-- 				validation = {
-			-- 					enabled = true,
-			-- 				},
-			-- 			},
-			-- 		},
-			-- 	})
-			-- end,
+			["ansiblels"] = function()
+				lspconfig["ansiblels"].setup({
+					cmd = { "ansible-language-server", "--stdio" },
+					filetypes = { "yaml", "yml" },
+
+					on_attach = on_attach,
+					capabilities = capabilities,
+					settings = {
+						ansible = {
+							ansible = {
+								path = "ansible",
+								useFullyQualifiedCollectionNames = true,
+							},
+							ansibleLint = {
+								enabled = true,
+								path = "ansible-lint",
+							},
+							completion = {
+								provideRedirectModules = true,
+								provideModuleOptionAliases = true,
+							},
+							validation = {
+								enabled = true,
+							},
+						},
+					},
+				})
+			end,
 		})
 	end,
 }
