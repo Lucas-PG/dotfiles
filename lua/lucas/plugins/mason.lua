@@ -65,7 +65,7 @@ return {
 				"shellcheck",
 				"shfmt",
 				"djlint",
-				"ltex-ls",
+				-- "ltex-ls",
 				"texlab",
 				"jdtls",
 				"pyright",
