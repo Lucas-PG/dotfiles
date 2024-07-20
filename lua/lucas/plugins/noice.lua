@@ -2,8 +2,25 @@ return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
 	opts = {
-		-- add any options here
+
+		lsp = {
+			override = {
+				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+				["vim.lsp.util.stylize_markdown"] = true,
+				["cmp.entry.get_documentation"] = true,
+			},
+		},
+
+		presets = {
+			command_palette = false, -- Disable command line alterations
+		},
+		-- NOTE: Uncomment below to display normal cmdline
+
+		-- cmdline = {
+		-- 	view = "cmdline",
+		-- },
 	},
+
 	dependencies = {
 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 		"MunifTanjim/nui.nvim",
