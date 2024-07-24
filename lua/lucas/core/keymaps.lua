@@ -41,9 +41,8 @@ map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "file save" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "file copy whole" })
 
-map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
-map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
+map("n", "<leader>ch", "<cmd>Cheatsheet<CR>", { desc = "toggle nvcheatsheet" })
 
 -- map("n", "<leader>fm", function()
 -- 	require("conform").format({ lsp_fallback = true })
