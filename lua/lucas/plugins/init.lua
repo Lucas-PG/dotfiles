@@ -38,4 +38,5 @@ return {
 	},
 	"RRethy/vim-illuminate",
 	"eandrju/cellular-automaton.nvim",
+	"sudormrfbin/cheatsheet.nvim",
 }
