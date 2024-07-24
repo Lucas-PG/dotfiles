@@ -148,8 +148,12 @@ map("n", "<leader>dvc", "<CMD>DiffviewClose<CR>", { desc = "close diff view" })
 map("n", "<leader>dvo", "<CMD>DiffviewOpen<CR>", { desc = "open diff view" })
 
 -- Markdown preview
-map("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", { desc = "start markdown preview" })
-map("n", "<leader>mx", "<CMD>MarkdownPreviewStop<CR>", { desc = "stop markdown preview" })
+-- map("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", { desc = "start markdown preview" })
+-- map("n", "<leader>mx", "<CMD>MarkdownPreviewStop<CR>", { desc = "stop markdown preview" })
+
+-- Peek Markdown
+map("n", "<leader>po", "<CMD>PeekOpen<CR>", { desc = "start markdown peek" })
+map("n", "<leader>pc", "<CMD>PeekClose<CR>", { desc = "close markdown peek" })
 
 -- Close buffer
 map("n", "<leader>x", "<CMD>q<CR>")
