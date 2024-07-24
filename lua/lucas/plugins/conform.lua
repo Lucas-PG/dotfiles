@@ -34,13 +34,13 @@ return {
 			},
 		})
 
-		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-			conform.format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			})
-		end, { desc = "Format file or range (in visual mode)" })
+		-- vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+		-- 	conform.format({
+		-- 		lsp_fallback = true,
+		-- 		async = false,
+		-- 		timeout_ms = 1000,
+		-- 	})
+		-- end, { desc = "Format file or range (in visual mode)" })
 
 		-- Custom Prettier configuration for YAML files
 		conform.formatters.prettier_yaml = {
