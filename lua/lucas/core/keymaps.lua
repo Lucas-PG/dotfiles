@@ -191,3 +191,8 @@ map("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
 map("n", "<leader>,", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
 map("n", "<leader>.", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
 map("n", "<leader>x", "<CMD>BufferClose<CR>", { desc = "Close buffer" })
+
+-- Sessions
+
+map("n", "<leader>s", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
+map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" }) -- save workspace session for current working directory
