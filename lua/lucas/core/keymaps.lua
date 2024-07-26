@@ -33,10 +33,10 @@ map("i", "<C-k>", "<Up>", { desc = "move up" })
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
--- map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
--- map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
--- map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
--- map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
+map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
+map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
+map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
+map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "file save" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "file copy whole" })
@@ -156,11 +156,10 @@ map("n", "<leader>po", "<CMD>PeekOpen<CR>", { desc = "start markdown peek" })
 map("n", "<leader>pc", "<CMD>PeekClose<CR>", { desc = "close markdown peek" })
 
 -- Close buffer
-map("n", "<leader>x", "<CMD>q<CR>")
 
--- map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
--- map("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
--- map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
+map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
+map("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
+map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
 map("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
 
 map("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
@@ -187,3 +186,8 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 
 -- Fuck my Life
 map("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+
+-- Barbar
+map("n", "<leader>,", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
+map("n", "<leader>.", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
+map("n", "<leader>x", "<CMD>BufferClose<CR>", { desc = "Close buffer" })
