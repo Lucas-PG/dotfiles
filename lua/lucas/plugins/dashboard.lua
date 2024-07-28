@@ -330,6 +330,7 @@ return {
 		}
 
 		logo = string.rep("\n", 8) .. logo .. "\n\n"
+		header_art = string.rep("\n", 6) .. header_art .. "\n\n"
 
 		local opts = {
 			theme = "doom",
@@ -344,7 +345,7 @@ return {
         -- header = headers.hydra,
 				center = {
 					{ action = "ene | startinsert", desc = " new file", icon = " ", key = "e" },
-					{ action = "Telescope find_files", desc = " find file", icon = " ", key = "<space>ff" },
+					-- { action = "Telescope find_files", desc = " find file", icon = " ", key = "<space>ff" },
 					{ action = "Telescope oldfiles", desc = " recent files", icon = " ", key = "<space>r" },
 					-- { action = "Telescope live_grep", desc = " find text",       icon = " ", key = "<space>g" },
 					-- { action = [[lua require("lazyvim.util").telescope.config_files()()]], desc = " config",          icon = " ", key = "<space>c" },
