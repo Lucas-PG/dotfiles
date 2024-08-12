@@ -40,6 +40,5 @@ return {
 	"eandrju/cellular-automaton.nvim",
 	"sudormrfbin/cheatsheet.nvim",
 	"princejoogie/dir-telescope.nvim",
-	"machakann/vim-swap",
 	"RRethy/nvim-align",
 }
