@@ -39,4 +39,6 @@ return {
 	"RRethy/vim-illuminate",
 	"eandrju/cellular-automaton.nvim",
 	"sudormrfbin/cheatsheet.nvim",
+	"arnamak/stay-centered.nvim",
+	"princejoogie/dir-telescope.nvim",
 }
