@@ -70,7 +70,7 @@ map(
 map("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
-map("n", "<leader>fd", "<cmd>Telescope dir live_grep", { desc = "Telescope inside certain dir" })
+map("n", "<leader>fd", "<cmd>Telescope dir live_grep<cr>", { desc = "Telescope inside certain dir" })
 
 -- terminal
 map("t", "<C-q>", "<C-\\><C-N>", { desc = "Terminal escape terminal mode" })
