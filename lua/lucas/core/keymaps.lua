@@ -43,9 +43,9 @@ map(
 	{ desc = "comment toggle" }
 )
 
--- nvimtree
+-- Nvimtree && Mini Files
 map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+map("n", "<leader>e", ":lua MiniFiles.open()<CR>", { noremap = true, silent = true, desc = "MiniFile [E]xplorer" })
 
 -- telescope
 map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "Telescope live grep" })
