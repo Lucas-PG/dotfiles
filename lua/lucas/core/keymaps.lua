@@ -161,3 +161,6 @@ map("n", "<leader>x", "<CMD>BufferClose<CR>", { desc = "Close buffer" })
 -- Sessions
 map("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
 map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" }) -- save workspace session for current working directory
+
+-- Oil
+map("n", "<leader>o", "<cmd>Oil<CR>", { desc = "Oil current directory" })
