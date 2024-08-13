@@ -41,4 +41,5 @@ return {
 	"sudormrfbin/cheatsheet.nvim",
 	"princejoogie/dir-telescope.nvim",
 	"RRethy/nvim-align",
+	"mistweaverco/kulala.nvim",
 }
