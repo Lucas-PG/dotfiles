@@ -68,13 +68,6 @@ return { -- Collection of various small independent pluins/modules
 				preview = true,
 			},
 		})
-		vim.keymap.set(
-			"n",
-			"<leader>e",
-			":lua MiniFiles.open()<CR>",
-			{ noremap = true, silent = true, desc = "MiniFile [E]xplorer" }
-		)
-
 		-- mini.jump
 		-- require('mini.jump').setup {}
 
