@@ -345,7 +345,7 @@ return {
         -- header = headers.hydra,
 				center = {
 					{ action = "ene | startinsert", desc = " new file", icon = " ", key = "e" },
-					-- { action = "Telescope find_files", desc = " find file", icon = " ", key = "<space>ff" },
+					{ action = "Telescope find_files", desc = " find file", icon = " ", key = "f" },
 					{ action = "Telescope oldfiles", desc = " recent files", icon = " ", key = "r" },
 					-- { action = "Telescope live_grep", desc = " find text",       icon = " ", key = "<space>g" },
 					-- { action = [[lua require("lazyvim.util").telescope.config_files()()]], desc = " config",          icon = " ", key = "<space>c" },
@@ -356,7 +356,7 @@ return {
 						key = "s",
 					},
 					-- { action = "LazyExtras", desc = " lazy extras", icon = " ", key = "<space>x" },
-					-- { action = "Lazy", desc = " lazy", icon = "󰒲 ", key = "<space>l" },
+					-- { action = "Lazy", desc = " lazy", icon = "󰒲 ", key = "l" },
 					{ action = "qa", desc = " quit", icon = " ", key = "q" },
 				},
 				footer = function()
