@@ -26,6 +26,7 @@ return {
 				htmldjango = { "prettier" },
 				java = { "google-java-format" },
 				cpp = { "clang-format" },
+				php = { "php-cs-fixer" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -50,6 +51,18 @@ return {
 
 		conform.formatters.shfmt = {
 			append_args = { "-i", "4" },
+		}
+
+		conform.formatters = {
+			["php-cs-fixer"] = {
+				command = "php-cs-fixer",
+				args = {
+					"fix",
+					"--rules=@PSR12", -- Formatting preset. Other presets are available, see the php-cs-fixer docs.
+					"$FILENAME",
+				},
+				stdin = false,
+			},
 		}
 	end,
 }
