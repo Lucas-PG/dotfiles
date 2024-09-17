@@ -15,7 +15,7 @@ return {
 				typescriptreact = { "prettier" },
 				svelte = { "prettier" },
 				json = { "prettier" },
-				yaml = { "prettier_yaml" },
+				yaml = { "prettier" },
 				markdown = { "prettier" },
 				graphql = { "prettier" },
 				liquid = { "prettier" },
