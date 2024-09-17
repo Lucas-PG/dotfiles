@@ -76,6 +76,8 @@ return {
 				"clangd",
 				"yaml-language-server",
 				"yamllint",
+				"autopep8",
+				"autoflake",
 			},
 		})
 	end,
