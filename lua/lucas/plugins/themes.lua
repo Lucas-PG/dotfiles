@@ -52,4 +52,5 @@ return {
 	"Mofiqul/adwaita.nvim",
 	"franbach/miramare",
 	"Badacadabra/vim-archery",
+	"xero/evangelion.nvim",
 }
