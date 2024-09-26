@@ -16,7 +16,7 @@ return {
        ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     
 ]]
 
-		local header_art = [[
+		local luffy = [[
       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡴⠖⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠲⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -330,7 +330,7 @@ return {
 		}
 
 		logo = string.rep("\n", 8) .. logo .. "\n\n"
-		header_art = string.rep("\n", 6) .. header_art .. "\n\n"
+		luffy = string.rep("\n", 6) .. luffy .. "\n\n"
 
 		local opts = {
 			theme = "doom",
@@ -340,12 +340,13 @@ return {
 				statusline = false,
 			},
 			config = {
-				header = vim.split(header_art, "\n"),
+				header = vim.split(luffy, "\n"),
         -- stylua: ignore
         -- header = headers.hydra,
 				center = {
-					{ action = "ene | startinsert", desc = " new file", icon = " ", key = "e" },
+					-- { action = "ene | startinsert", desc = " new file", icon = " ", key = "e" },
 					{ action = "Telescope find_files", desc = " find file", icon = " ", key = "f" },
+          { action = "Telescope oldfiles", desc = " recent files", icon = " ", key = "r" },
 					{ action = "Oil", desc = " oil", icon = " ", key = "o" },
 					-- { action = "Telescope live_grep", desc = " find text",       icon = " ", key = "<space>g" },
 					-- { action = [[lua require("lazyvim.util").telescope.config_files()()]], desc = " config",          icon = " ", key = "<space>c" },
