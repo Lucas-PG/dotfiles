@@ -53,7 +53,8 @@ return {
 		lualine.setup({
 			options = {
 				-- theme = "tokyonight",
-				theme = "nightfly",
+				-- theme = "nightfly",
+				theme = "iceberg_dark",
 			},
 			sections = {
 				lualine_x = {
