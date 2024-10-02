@@ -28,11 +28,25 @@ return {
 	"rebelot/kanagawa.nvim",
 	"rose-pine/neovim",
 	"Mofiqul/vscode.nvim",
-	"shaunsingh/nord.nvim",
+	{
+		"shaunsingh/nord.nvim",
+	},
 	"shaunsingh/moonlight.nvim",
 	"kdheepak/monochrome.nvim",
 	"nyoom-engineering/oxocarbon.nvim",
-	"AlexvZyl/nordic.nvim",
+	{
+		"AlexvZyl/nordic.nvim",
+		config = function()
+			require("nordic").setup({
+				transparent = {
+					-- Enable transparent background.
+					bg = false,
+					-- Enable transparent background for floating windows.
+					float = false,
+				},
+			})
+		end,
+	},
 	"patstockwell/vim-monokai-tasty",
 	"NLKNguyen/papercolor-theme",
 	"sonph/onehalf",

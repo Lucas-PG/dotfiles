@@ -1,1 +1,1 @@
-vim.cmd("colorscheme rdark-terminal2")
+vim.cmd("colorscheme nord")

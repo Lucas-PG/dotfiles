@@ -54,7 +54,9 @@ return {
 			options = {
 				-- theme = "tokyonight",
 				-- theme = "nightfly",
-				theme = "iceberg_dark",
+				-- theme = "iceberg_dark",
+				-- theme = "vscode",
+				theme = "nord",
 			},
 			sections = {
 				lualine_x = {
