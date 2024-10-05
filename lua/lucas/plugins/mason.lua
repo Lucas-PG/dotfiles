@@ -77,6 +77,7 @@ return {
 				"yamllint",
 				"autopep8",
 				"autoflake",
+				"intelephense",
 			},
 		})
 	end,
