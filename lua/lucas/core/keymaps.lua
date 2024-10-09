@@ -71,7 +71,7 @@ map("n", "<leader>fd", "<cmd>Telescope dir live_grep<cr>", { desc = "Telescope i
 map("n", "<leader>th", ":Telescope themes<CR>", { noremap = true, silent = true, desc = "Theme Switcher" })
 
 -- terminal
-map("t", "jk", "<C-\\><C-N>", { desc = "Terminal escape terminal mode" })
+map("t", "<C-q>", "<C-\\><C-N>", { desc = "Terminal escape terminal mode" })
 
 -- whichkey
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
