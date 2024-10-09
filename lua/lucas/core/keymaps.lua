@@ -151,8 +151,8 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 map("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 -- Barbar
-map("n", "<leader>,", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
-map("n", "<leader>.", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
+map("n", "<tab>", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
+map("n", "<s-tab>", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
 map("n", "<leader>x", "<CMD>BufferClose<CR>", { desc = "Close buffer" })
 
 -- Sessions
