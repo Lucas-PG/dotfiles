@@ -127,8 +127,8 @@ map("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
 
 map("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 map("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
-map("n", "<Tab>", "<cmd>tabn<CR>", { desc = "Go to next tab" })
-map("n", "<S-Tab>", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
+-- map("n", "<Tab>", "<cmd>tabn<CR>", { desc = "Go to next tab" })
+-- map("n", "<S-Tab>", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 map("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 map("n", "<leader>n", "<cmd>ToggleTerm<cr>")
@@ -151,8 +151,8 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 map("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 -- Barbar
-map("n", "<tab>", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
-map("n", "<s-tab>", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
+map("n", "<s-tab>", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
+map("n", "<tab>", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
 map("n", "<leader>x", "<CMD>BufferClose<CR>", { desc = "Close buffer" })
 
 -- Sessions
