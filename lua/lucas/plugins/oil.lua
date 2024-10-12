@@ -1,6 +1,9 @@
 return {
 	"stevearc/oil.nvim",
 	opts = {
+		view_options = {
+			show_hidden = true, -- This will make sure dot files are displayed
+		},
 		skip_confirm_for_simple_edits = true,
 	},
 	-- Optional dependencies
