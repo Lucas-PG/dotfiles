@@ -27,7 +27,7 @@ return {
 		end,
 	},
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
-	"sindrets/diffview.nvim",
+	-- "sindrets/diffview.nvim",
 	"nvim-pack/nvim-spectre",
 	{
 
@@ -37,9 +37,7 @@ return {
 		end,
 	},
 	"RRethy/vim-illuminate",
-	"eandrju/cellular-automaton.nvim",
-	"sudormrfbin/cheatsheet.nvim",
-	"princejoogie/dir-telescope.nvim",
+	-- "eandrju/cellular-automaton.nvim",
 	{
 		"pwntester/octo.nvim",
 		requires = {
@@ -53,15 +51,9 @@ return {
 		end,
 	},
 	{
-		"HakonHarnes/img-clip.nvim",
-		event = "VeryLazy",
-		opts = {
-			-- add options here
-			-- or leave it empty to use the default settings
-		},
-		keys = {
-			-- suggested keymap
-			{ "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
-		},
+		"smjonas/inc-rename.nvim",
+		config = function()
+			require("inc_rename").setup()
+		end,
 	},
 }

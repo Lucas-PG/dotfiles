@@ -1,13 +1,4 @@
 return {
-	"rafi/awesome-vim-colorschemes",
-	{
-		"scottmckendry/cyberdream.nvim",
-		config = function()
-			require("cyberdream").setup({
-				transparent = true,
-			})
-		end,
-	},
 	{
 		"craftzdog/solarized-osaka.nvim",
 		config = function()
@@ -25,35 +16,35 @@ return {
 	-- "EdenEast/nightfox.nvim",
 	-- "bluz71/vim-nightfly-colors",
 	-- "olivercederborg/poimandres.nvim",
-	"tiagovla/tokyodark.nvim",
+	-- "tiagovla/tokyodark.nvim",
 	-- "tanvirtin/monokai.nvim",
 	-- "maxmx03/fluoromachine.nvim",
 	-- "sekke276/dark_flat.nvim",
 	-- "fenetikm/falcon",
-	"rebelot/kanagawa.nvim",
-	"rose-pine/neovim",
-	"Mofiqul/vscode.nvim",
+	-- "rebelot/kanagawa.nvim",
+	-- "rose-pine/neovim",
+	-- "Mofiqul/vscode.nvim",
 	"shaunsingh/nord.nvim",
 	-- "shaunsingh/moonlight.nvim",
 	-- "kdheepak/monochrome.nvim",
 	"nyoom-engineering/oxocarbon.nvim",
-	{
-		"AlexvZyl/nordic.nvim",
-		config = function()
-			require("nordic").setup({
-				transparent = {
-					-- Enable transparent background.
-					bg = false,
-					-- Enable transparent background for floating windows.
-					float = false,
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"AlexvZyl/nordic.nvim",
+	-- 	config = function()
+	-- 		require("nordic").setup({
+	-- 			transparent = {
+	-- 				-- Enable transparent background.
+	-- 				bg = false,
+	-- 				-- Enable transparent background for floating windows.
+	-- 				float = false,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	-- "patstockwell/vim-monokai-tasty",
 	-- "NLKNguyen/papercolor-theme",
-	"sonph/onehalf",
-	"sjl/badwolf",
+	-- "sonph/onehalf",
+	-- "sjl/badwolf",
 	-- "jacoborus/tender.vim",
 	-- "srcery-colors/srcery-vim",
 	"projekt0n/github-nvim-theme",
@@ -65,7 +56,7 @@ return {
 	-- "flazz/vim-colorschemes",
 	-- "itchyny/landscape.vim",
 	"folke/tokyonight.nvim",
-	"Mofiqul/dracula.nvim",
+	-- "Mofiqul/dracula.nvim",
 	-- "Mofiqul/adwaita.nvim",
 	-- "franbach/miramare",
 	-- "Badacadabra/vim-archery",
