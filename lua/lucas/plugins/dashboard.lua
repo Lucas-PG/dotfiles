@@ -20,20 +20,25 @@ return {
         -- header = headers.hydra,
 				center = {
 					-- { action = "ene | startinsert", desc = " new file", icon = " ", key = "e" },
-					{ action = "Telescope find_files", desc = " find file", icon = " ", key = "f" },
-          { action = "Telescope oldfiles", desc = " recent files", icon = " ", key = "r" },
-					{ action = "Oil", desc = " oil", icon = " ", key = "o" },
+					{ action = "Telescope find_files", desc = " Find File", icon = " ", key = "f" },
+          { action = "Telescope oldfiles", desc = " Recent Files", icon = " ", key = "r" },
 					-- { action = "Telescope live_grep", desc = " find text",       icon = " ", key = "<space>g" },
+          {
+            icon = '  ',
+            desc = 'Oil ',
+            key = 'o',
+            action = ':Oil',
+          },
 					-- { action = [[lua require("lazyvim.util").telescope.config_files()()]], desc = " config",          icon = " ", key = "<space>c" },
 					{
 						action = "SessionRestore",
-						desc = " restore session",
+						desc = " Restore Session",
 						icon = " ",
 						key = "s",
 					},
 					-- { action = "LazyExtras", desc = " lazy extras", icon = " ", key = "<space>x" },
-					-- { action = "Lazy", desc = " lazy", icon = "󰒲 ", key = "l" },
-					{ action = "qa", desc = " quit", icon = " ", key = "q" },
+					{ action = "Lazy", desc = " Lazy", icon = "󰒲 ", key = "l" },
+					{ action = "qa", desc = " Quit", icon = " ", key = "q" },
 				},
 				footer = function()
 					local stats = require("lazy").stats()
