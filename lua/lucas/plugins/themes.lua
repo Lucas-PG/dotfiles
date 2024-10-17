@@ -22,7 +22,18 @@ return {
 	-- "sekke276/dark_flat.nvim",
 	-- "fenetikm/falcon",
 	-- "rebelot/kanagawa.nvim",
-	-- "rose-pine/neovim",
+	{
+		"rose-pine/neovim",
+		config = function()
+			require("rose-pine").setup({
+				styles = {
+					bold = true,
+					italic = true,
+					transparency = true,
+				},
+			})
+		end,
+	},
 	-- "Mofiqul/vscode.nvim",
 	"shaunsingh/nord.nvim",
 	-- "shaunsingh/moonlight.nvim",
