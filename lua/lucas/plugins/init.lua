@@ -27,7 +27,6 @@ return {
 		end,
 	},
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
-	-- "sindrets/diffview.nvim",
 	"nvim-pack/nvim-spectre",
 	{
 
@@ -48,12 +47,6 @@ return {
 		},
 		config = function()
 			require("octo").setup()
-		end,
-	},
-	{
-		"smjonas/inc-rename.nvim",
-		config = function()
-			require("inc_rename").setup()
 		end,
 	},
 }
