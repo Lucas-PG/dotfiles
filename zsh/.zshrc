@@ -121,12 +121,6 @@ eval $(thefuck --alias fk)
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 
-# ---- Zplug ----
-
-source ~/.zplug/init.zsh
-
-zplug "zsh-users/zsh-history-substring-search", as: plugin
-
 alias ls="ls --color"
 alias cd="z"
 alias c="clear"
