@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 local map = vim.keymap.set
 
+map("n", "<leader>ll", "<cmd>Lazy<cr>", { desc = "Open Lazy" })
+
 -- NvimTree
 map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
 
@@ -103,7 +105,7 @@ map("i", "jk", "<ESC>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- Vimtex
-map("n", "<leader>ll", "<CMD>VimtexCompile<CR>", { desc = "compile latex (.tex) file" })
+-- map("n", "<leader>ll", "<CMD>VimtexCompile<CR>", { desc = "compile latex (.tex) file" })
 
 -- DiffView
 map("n", "<leader>dvh", "<CMD>DiffviewFileHistory<CR>", { desc = "view file commit history" })
