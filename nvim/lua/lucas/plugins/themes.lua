@@ -27,7 +27,7 @@ return {
 		config = function()
 			require("rose-pine").setup({
 				styles = {
-					bold = true,
+					bold = false,
 					italic = true,
 					transparency = true,
 				},

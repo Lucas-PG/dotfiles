@@ -104,9 +104,6 @@ map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
--- Vimtex
--- map("n", "<leader>ll", "<CMD>VimtexCompile<CR>", { desc = "compile latex (.tex) file" })
-
 -- DiffView
 map("n", "<leader>dvh", "<CMD>DiffviewFileHistory<CR>", { desc = "view file commit history" })
 map("n", "<leader>dvc", "<CMD>DiffviewClose<CR>", { desc = "close diff view" })

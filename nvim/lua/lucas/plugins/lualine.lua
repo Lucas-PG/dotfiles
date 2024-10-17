@@ -4,15 +4,15 @@ return {
 	-- config = function()
 	-- 	local lualine = require("lualine")
 	-- 	local lazy_status = require("lazy.status") -- to configure lazy pending updates count
-
-	-- configure lualine with modified theme
+	-- 	-- configure lualine with modified theme
 	-- 	lualine.setup({
 	-- 		options = {
 	-- 			-- theme = "tokyonight",
 	-- 			-- theme = "nightfly",
 	-- 			-- theme = "iceberg_dark",
 	-- 			-- theme = "vscode",
-	-- 			theme = "nord",
+	-- 			-- theme = "nord",
+	-- 			theme = "solarized_dark",
 	-- 		},
 	-- 		sections = {
 	-- 			lualine_x = {
