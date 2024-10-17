@@ -5,7 +5,7 @@ return {
 		local custom_header = require("lucas.core.headers")
 
 		-- logo = string.rep("\n", 8) .. logo .. "\n\n"
-		custom_header = string.rep("\n", 6) .. custom_header .. "\n\n"
+		custom_header = string.rep("\n", 5) .. custom_header .. "\n\n"
 
 		local opts = {
 			theme = "doom",
