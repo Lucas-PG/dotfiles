@@ -55,7 +55,14 @@ return {
 	-- "thedenisnikulin/vim-cyberpunk",
 	-- "flazz/vim-colorschemes",
 	-- "itchyny/landscape.vim",
-	"folke/tokyonight.nvim",
+	{
+		"folke/tokyonight.nvim",
+		config = function()
+			require("tokyonight").setup({
+				transparent = true,
+			})
+		end,
+	},
 	-- "Mofiqul/dracula.nvim",
 	-- "Mofiqul/adwaita.nvim",
 	-- "franbach/miramare",
