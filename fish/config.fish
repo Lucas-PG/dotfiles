@@ -7,4 +7,5 @@ fish_config prompt choose arrow
 
 source (dirname (status --current-filename))/aliases.fish 
 
+thefuck --alias | source
 zoxide init fish | source
