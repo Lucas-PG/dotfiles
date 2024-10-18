@@ -1,6 +1,6 @@
 vim.cmd("let g:netrw_liststyle = 3")
 local opt = vim.opt
-vim.o.conceallevel = 2
+-- vim.o.conceallevel = 2
 
 opt.relativenumber = true
 opt.number = true
@@ -25,4 +25,3 @@ vim.g.blamer_enabled = true
 vim.g.blamer_delay = 300
 vim.g.blamer_show_in_visual_modes = 0
 vim.g.blamer_show_in_insert_modes = 0
-
