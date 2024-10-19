@@ -8,4 +8,5 @@ alias gx="git reset --hard HEAD && git clean -fd"
 alias t="tmux"
 alias vim="nvim"
 alias cd="z"
+alias ls="eza --icons=always"
 
