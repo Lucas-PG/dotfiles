@@ -19,23 +19,35 @@ function fish_prompt
   set -l blue (set_color -o blue)
   set -l green (set_color -o green)
   set -l normal (set_color normal)
+  set -l pink (set_color f0abfc)
 
   if test $last_status = 0
-      set arrow "$green➜ "
+    set arrow "$green➜ "
   else
-      set arrow "$red➜ "
+    set arrow "$red➜ "
   end
   set -l cwd $cyan(basename (prompt_pwd))
 
+  # Git branch and dirty state
+  set git_info ''
+  set is_dirty 0
   if [ (_git_branch_name) ]
-    set -l git_branch $red(_git_branch_name)
+    set -l git_branch $pink(_git_branch_name)
     set git_info "$blue git:($git_branch$blue)"
 
     if [ (_is_git_dirty) ]
       set -l dirty "$yellow ✗"
       set git_info "$git_info$dirty"
+      set is_dirty 1
     end
   end
 
-  echo -n -s $arrow ' ' $cwd $git_info $normal ' '
+  # If git is dirty, show arrow at the beginning
+  if test $is_dirty = 1
+    echo -n -s ' ' $arrow $cwd $git_info $normal ' '
+  else
+    # If git is not dirty, show arrow at the end
+    echo -n -s ' ' $cwd $git_info ' '
+    echo -n -s ' ' $arrow ' '
+  end
 end
