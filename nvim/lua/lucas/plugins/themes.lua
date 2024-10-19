@@ -71,6 +71,12 @@ return {
 		config = function()
 			require("tokyonight").setup({
 				transparent = true,
+				styles = {
+					comments = { italic = true },
+					keywords = { italic = true },
+					sidebars = "transparent",
+					floats = "transparent",
+				},
 			})
 		end,
 	},
