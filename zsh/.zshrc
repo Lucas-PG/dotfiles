@@ -136,12 +136,6 @@ alias t='tmux'
 alias run-boot='sudo bash -x /mnt/suporte/scripts/boot.sh'
 alias vim="nvim"
 alias duu='sudo du -h / | sort -rh | head -n 10'
-# alias kitty-opp="sed -i s/background_opacity/# background_opacity ~/.config/kitty/kitty.conf && sed -i s/background_blur/# background_blur/ ~/.config/kitty/kitty.conf"
-
-alias kno="sed -i 's/^background_opacity/# background_opacity/' ~/.config/kitty/kitty.conf && sed -i 's/^background_blur/# background_blur/' ~/.config/kitty/kitty.conf && kitty @ set-font-size 0"
-alias ko="sed -i 's/^# background_opacity/background_opacity/' ~/.config/kitty/kitty.conf && sed -i 's/^# background_blur/background_blur/' ~/.config/kitty/kitty.conf && kitty @ set-font-size 0"
-
-# source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 complete -C '/usr/local/bin/aws_completer' aws
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
