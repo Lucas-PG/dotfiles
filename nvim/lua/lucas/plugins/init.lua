@@ -2,15 +2,6 @@ return {
 	"APZelos/blamer.nvim",
 	"sindrets/diffview.nvim",
 	"tpope/vim-fugitive",
-	{
-		"rcarriga/nvim-notify",
-		config = function()
-			require("notify").setup({
-				background_colour = "#000000",
-			})
-		end,
-	},
-
 	"ThePrimeagen/vim-be-good",
 	"nvim-telescope/telescope.nvim",
 	"nvim-lua/plenary.nvim",
@@ -26,7 +17,11 @@ return {
 			require("colorizer").setup()
 		end,
 	},
-	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		config = true,
+	},
 	"nvim-pack/nvim-spectre",
 	{
 
@@ -36,17 +31,4 @@ return {
 		end,
 	},
 	"RRethy/vim-illuminate",
-	-- "eandrju/cellular-automaton.nvim",
-	{
-		"pwntester/octo.nvim",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-			-- OR 'ibhagwan/fzf-lua',
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("octo").setup()
-		end,
-	},
 }
