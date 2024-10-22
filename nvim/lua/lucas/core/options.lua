@@ -1,7 +1,7 @@
 vim.cmd("let g:netrw_liststyle = 3")
 local opt = vim.opt
 -- vim.o.conceallevel = 2
-
+opt.shell = "/bin/bash"
 opt.relativenumber = true
 opt.number = true
 opt.tabstop = 2
