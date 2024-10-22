@@ -78,6 +78,7 @@ return {
 				"autopep8",
 				"autoflake",
 				"intelephense",
+				"gopls",
 			},
 		})
 	end,
