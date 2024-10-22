@@ -23,16 +23,6 @@ map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "file save" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "file copy whole" })
 
-map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
-map("n", "<leader>ch", "<cmd>Cheatsheet<CR>", { desc = "toggle nvcheatsheet" })
-
--- map("n", "<leader>fm", function()
--- 	require("conform").format({ lsp_fallback = true })
--- end, { desc = "format files" })
-
--- global lsp mappings
-map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
-
 -- Comment
 map("n", "<leader>/", function()
 	require("Comment.api").toggle.linewise.current()
@@ -137,5 +127,5 @@ map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto s
 -- Oil
 map("n", "<leader>o", "<cmd>Oil<CR>", { desc = "Oil current directory" })
 
--- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- Move line up
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- Move line down
