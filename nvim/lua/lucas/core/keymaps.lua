@@ -45,20 +45,14 @@ map(
 	{ desc = "comment toggle" }
 )
 
--- Nvimtree && Mini Files
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>e", ":lua MiniFiles.open()<CR>", { noremap = true, silent = true, desc = "MiniFile [E]xplorer" })
-
 -- telescope
 map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "Telescope live grep" })
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Telescope find buffers" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope help page" })
 map("n", "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "Telescope find marks" })
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "Telescope find oldfiles" })
 map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope find in current buffer" })
 map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "Telescope git commits" })
 map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "Telescope git status" })
-map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "Telescope pick hidden term" })
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Telescope find files" })
 map(
 	"n",
@@ -70,7 +64,7 @@ map("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recen
 map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 map("n", "<leader>fd", "<cmd>Telescope dir live_grep<cr>", { desc = "Telescope inside certain dir" })
-map("n", "<leader>th", ":Telescope themes<CR>", { noremap = true, silent = true, desc = "Theme Switcher" })
+map("n", "<leader>th", "<cmd>Telescope themes<CR>", { noremap = true, silent = true, desc = "Theme Switcher" })
 
 -- terminal
 map("t", "<C-q>", "<C-\\><C-N>", { desc = "Terminal escape terminal mode" })
@@ -97,25 +91,15 @@ map("n", "<leader>cc", function()
 		end
 	end
 end, { desc = "blankline jump to current context" })
--- add yours here
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
--- DiffView
-map("n", "<leader>dvh", "<CMD>DiffviewFileHistory<CR>", { desc = "view file commit history" })
-map("n", "<leader>dvc", "<CMD>DiffviewClose<CR>", { desc = "close diff view" })
-map("n", "<leader>dvo", "<CMD>DiffviewOpen<CR>", { desc = "open diff view" })
-
 -- Markdown preview
--- map("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", { desc = "start markdown preview" })
--- map("n", "<leader>mx", "<CMD>MarkdownPreviewStop<CR>", { desc = "stop markdown preview" })
-
--- Peek Markdown
-map("n", "<leader>po", "<CMD>PeekOpen<CR>", { desc = "start markdown peek" })
-map("n", "<leader>pc", "<CMD>PeekClose<CR>", { desc = "close markdown peek" })
+map("n", "<leader>mp", "<CMD>MarkdownPreview<CR>", { desc = "start markdown preview" })
+map("n", "<leader>mx", "<CMD>MarkdownPreviewStop<CR>", { desc = "stop markdown preview" })
 
 -- Close buffer
 
@@ -146,17 +130,12 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 	desc = "Search on current file",
 })
 
--- Fuck my Life
-map("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
-
--- Barbar
-map("n", "<s-tab>", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
-map("n", "<tab>", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
-map("n", "<leader>x", "<CMD>BufferClose<CR>", { desc = "Close buffer" })
-
 -- Sessions
 map("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" }) -- restore last workspace session for current directory
 map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" }) -- save workspace session for current working directory
 
 -- Oil
 map("n", "<leader>o", "<cmd>Oil<CR>", { desc = "Oil current directory" })
+
+-- greatest remap ever
+vim.keymap.set("x", "<leader>p", [["_dP]])

@@ -5,7 +5,9 @@ for file in (dirname (status --current-filename))/functions/*
     source $file
 end
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if test (uname) = Darwin;
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+end
 
 thefuck --alias | source
 zoxide init fish | source
