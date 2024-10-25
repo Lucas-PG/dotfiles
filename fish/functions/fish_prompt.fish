@@ -47,7 +47,7 @@ function fish_prompt
     echo -n -s ' ' $arrow $cwd $git_info $normal ' '
   else
     # If git is not dirty, show arrow at the end
-    echo -n -s ' ' $cwd $git_info ' '
-    echo -n -s ' ' $arrow ' '
+    echo -n -s ' ' $cwd $git_info ' ' $arrow
   end
 end
+
