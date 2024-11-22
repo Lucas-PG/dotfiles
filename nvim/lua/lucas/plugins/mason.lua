@@ -77,7 +77,7 @@ return {
 				"yamllint",
 				"autopep8",
 				"autoflake",
-				"intelephense",
+				"php-cs-fixer",
 				"gopls",
 			},
 		})
