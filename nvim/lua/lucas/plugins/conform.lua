@@ -26,6 +26,7 @@ return {
 				htmldjango = { "prettier" },
 				java = { "google-java-format" },
 				cpp = { "clang-format" },
+				php = { "php-cs-fixer" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
