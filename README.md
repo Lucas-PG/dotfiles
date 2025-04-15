@@ -13,8 +13,8 @@ I use:
 
 ```bash
 git clone git@github.com:Lucas-PG/dotfiles.git ~/dotfiles
-ls -s ~/dotfiles/nvim/ ~/.config/nvim
-ls -s ~/dotfiles/kitty/ ~/.config/kitty/
-ls -s ~/dotfiles/fish/ ~/.config/fish/
+ln -s ~/dotfiles/nvim/ ~/.config/nvim
+ln -s ~/dotfiles/kitty/ ~/.config/kitty/
+ln -s ~/dotfiles/fish/ ~/.config/fish/
 # Continue with whatever else you want to install from this repo
 ```
