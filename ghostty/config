@@ -1,0 +1,20 @@
+# Cores
+background = 000000
+foreground = ffffff
+
+# Fonte
+font-size = 15
+font-family = JetBrainsMonoNL Nerd Font
+
+# Clipboard
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = true
+copy-on-select = true
+
+# Outros
+window-decoration = none
+shell-integration = fish
+app-notifications = no-clipboard-copy
+confirm-close-surface = false
