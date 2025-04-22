@@ -15,6 +15,7 @@ return {
 		-- Required.
 		"nvim-lua/plenary.nvim",
 	},
+
 	opts = {
 		workspaces = {
 			{
@@ -37,6 +38,21 @@ return {
 			},
 		},
 
+		note_frontmatter_func = function(note)
+			local out = {
+				id = note.id,
+				aliases = note.aliases,
+				tags = note.tags,
+			}
+
+			if note.metadata and note.metadata.created then
+				out.created = note.metadata.created
+			else
+				out.created = os.date("%Y-%m-%d %H:%M")
+			end
+
+			return out
+		end,
 		disable_frontmatter = false,
 	},
 }
