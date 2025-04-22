@@ -1,10 +1,10 @@
 return {
 	"APZelos/blamer.nvim",
-	"sindrets/diffview.nvim",
 	"tpope/vim-fugitive",
 	"ThePrimeagen/vim-be-good",
 	"nvim-telescope/telescope.nvim",
 	"nvim-lua/plenary.nvim",
+	"eandrju/cellular-automaton.nvim",
 	{
 		"andrew-george/telescope-themes",
 		config = function()

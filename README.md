@@ -5,7 +5,7 @@ My dotfiles.
 I use:
 
 - fish shell
-- Kitty terminal emulator
+- Ghostty terminal emulator
 - Neovim text editor
 - Tmux for terminal sessions management
 

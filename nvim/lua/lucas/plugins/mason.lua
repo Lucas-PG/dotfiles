@@ -60,7 +60,7 @@ return {
 				"sql-formatter",
 				"black", -- Formatador Python
 				"google-java-format",
-				"bash-language-server",
+				-- "bash-language-server",
 				"shellcheck",
 				"shfmt",
 				"djlint",
@@ -78,7 +78,9 @@ return {
 				"autopep8",
 				"autoflake",
 				"php-cs-fixer",
+				"intelephense",
 				"gopls",
+				"terraform-ls",
 			},
 		})
 	end,
