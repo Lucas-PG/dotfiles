@@ -12,14 +12,14 @@ return {
 			})
 		end,
 	},
-	{
-		"rebelot/kanagawa.nvim",
-		config = function()
-			require("kanagawa").setup({
-				transparent = true,
-			})
-		end,
-	},
+	-- {
+	-- 	"rebelot/kanagawa.nvim",
+	-- 	config = function()
+	-- 		require("kanagawa").setup({
+	-- 			transparent = true,
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"rose-pine/neovim",
 		config = function()
@@ -29,41 +29,46 @@ return {
 					italic = true,
 					transparency = true,
 				},
-			})
-		end,
-	},
-	"Mofiqul/vscode.nvim",
-	"shaunsingh/nord.nvim",
-	"nyoom-engineering/oxocarbon.nvim",
-	"sonph/onehalf",
-	{
-		"projekt0n/github-nvim-theme",
-		config = function()
-			require("github-theme").setup({
-				options = {
-					transparent = true,
+				highlight_groups = {
+					StatusLine = { bg = "#28263e", fg = "#e0def4" }, -- Using the background color from the image
+					StatusLineNC = { bg = "#28263e", fg = "#908caa" },
 				},
 			})
 		end,
 	},
-	"haishanh/night-owl.vim",
-	{
-		"folke/tokyonight.nvim",
-		config = function()
-			require("tokyonight").setup({
-				transparent = true,
-				styles = {
-					comments = { italic = true },
-					keywords = { italic = true },
-					sidebars = "transparent",
-					floats = "transparent",
-				},
-			})
-		end,
-	},
-	"vague2k/vague.nvim",
-	"EdenEast/nightfox.nvim",
-	"joshdick/onedark.vim",
+	-- "Mofiqul/vscode.nvim",
+	-- "shaunsingh/nord.nvim",
+	-- "nyoom-engineering/oxocarbon.nvim",
+	-- "sonph/onehalf",
+	-- "mikesmithgh/gruvsquirrel.nvim",
+	-- {
+	-- 	"projekt0n/github-nvim-theme",
+	-- 	config = function()
+	-- 		require("github-theme").setup({
+	-- 			options = {
+	-- 				transparent = true,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
+	-- "haishanh/night-owl.vim",
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	config = function()
+	-- 		require("tokyonight").setup({
+	-- 			transparent = true,
+	-- 			styles = {
+	-- 				comments = { italic = true },
+	-- 				keywords = { italic = true },
+	-- 				sidebars = "transparent",
+	-- 				floats = "transparent",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
+	-- "vague2k/vague.nvim",
+	-- "EdenEast/nightfox.nvim",
+	-- "joshdick/onedark.vim",
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
@@ -71,7 +76,7 @@ return {
 		opts = {
 			no_italic = true,
 			term_colors = true,
-			transparent_background = false,
+			transparent_background = true,
 			styles = {
 				comments = {},
 				conditionals = {},
@@ -87,9 +92,9 @@ return {
 			},
 			color_overrides = {
 				mocha = {
-					base = "#0d0d0d",
-					mantle = "#0d0d0d",
-					crust = "#0d0d0d",
+					base = "#1d1f20",
+					mantle = "#1d1f20",
+					crust = "#1d1f20",
 				},
 			},
 			integrations = {
@@ -104,4 +109,13 @@ return {
 			},
 		},
 	},
+	-- {
+	-- 	"eldritch-theme/eldritch.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {
+	-- 		transparent = true,
+	-- 	},
+	-- },
+	"morhetz/gruvbox",
 }
