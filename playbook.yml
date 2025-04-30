@@ -1,0 +1,49 @@
+- name: Create symlinks
+  hosts: localhost
+  gather_facts: true
+  vars:
+    dotfiles_path: "{{ playbook_dir }}"
+    home_path: "{{ lookup('env', 'HOME') }}"
+
+    config_dirs:
+      - nvim
+      - wezterm
+
+    tmux_files:
+      - .tmux.conf
+      - .tmux
+
+    macos_only_configs:
+      - yabai
+      - skhd
+  tasks:
+    - name: Ensure .config exists
+      ansible.builtin.file:
+        path: "{{ home_path }}/.config"
+        state: directory
+        mode: "0755"
+
+    - name: Create directories symlinks
+      ansible.builtin.file:
+        src: "{{ dotfiles_path }}/{{ item }}"
+        dest: "{{ home_path }}/.config/{{ item }}"
+        state: link
+        force: true
+      loop: "{{ config_dirs }}"
+
+    - name: Create tmux symlinks
+      ansible.builtin.file:
+        src: "{{ dotfiles_path }}/tmux/{{ item }}"
+        dest: "{{ home_path }}/{{ item }}"
+        state: link
+        force: true
+      loop: "{{ tmux_files }}"
+
+    - name: Create macos exclusive symlinks
+      ansible.builtin.file:
+        src: "{{ dotfiles_path }}/{{ item }}"
+        dest: "{{ home_path }}/.config/{{ item }}"
+        state: link
+        force: true
+      loop: "{{ macos_only_configs }}"
+      when: ansible_system == "Darwin"

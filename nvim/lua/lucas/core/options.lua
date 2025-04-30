@@ -20,6 +20,7 @@ opt.splitright = true
 opt.splitbelow = true
 opt.autoread = true
 opt.linebreak = true
+opt.colorcolumn = "80"
 
 vim.g.blamer_enabled = true
 vim.g.blamer_delay = 300
