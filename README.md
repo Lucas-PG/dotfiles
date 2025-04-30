@@ -5,16 +5,14 @@ My dotfiles.
 I use:
 
 - fish shell
-- Ghostty terminal emulator
+- Wezterm terminal emulator
 - Neovim text editor
 - Tmux for terminal sessions management
 
 # Installing
 
+Just install [ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) and run:
+
 ```bash
-git clone git@github.com:Lucas-PG/dotfiles.git ~/dotfiles
-ln -s ~/dotfiles/nvim/ ~/.config/nvim
-ln -s ~/dotfiles/kitty/ ~/.config/kitty/
-ln -s ~/dotfiles/fish/ ~/.config/fish/
-# Continue with whatever else you want to install from this repo
+ansible-playbook playbook.yml
 ```
