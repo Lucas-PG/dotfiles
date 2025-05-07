@@ -5,7 +5,7 @@ return {
 		local custom_header = require("lucas.core.headers")
 
 		-- logo = string.rep("\n", 8) .. logo .. "\n\n"
-		custom_header = string.rep("\n", 5) .. custom_header .. "\n\n"
+		custom_header = string.rep("\n", 2) .. custom_header .. "\n\n"
 
 		local opts = {
 			theme = "doom",
@@ -16,19 +16,19 @@ return {
 			},
 			config = {
 				header = vim.split(custom_header, "\n"),
-        -- stylua: ignore
-        -- header = headers.hydra,
+	       -- stylua: ignore
+	       -- header = headers.hydra,
 				center = {
 					-- { action = "ene | startinsert", desc = " new file", icon = " ", key = "e" },
 					{ action = "Telescope find_files", desc = " Find File", icon = " ", key = "f" },
-          { action = "Telescope oldfiles", desc = " Recent Files", icon = " ", key = "r" },
+	         { action = "Telescope oldfiles", desc = " Recent Files", icon = " ", key = "r" },
 					-- { action = "Telescope live_grep", desc = " find text",       icon = " ", key = "<space>g" },
-          {
-            icon = '  ',
-            desc = 'Oil ',
-            key = 'o',
-            action = ':Oil',
-          },
+	         {
+	           icon = '  ',
+	           desc = 'Oil ',
+	           key = 'o',
+	           action = ':Oil',
+	         },
 					-- { action = [[lua require("lazyvim.util").telescope.config_files()()]], desc = " config",          icon = " ", key = "<space>c" },
 					{
 						action = "SessionRestore",

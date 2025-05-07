@@ -18,15 +18,15 @@ return {
 
 	opts = {
 		workspaces = {
-			{
-				name = "garden",
-				path = "~/repositories/garden/content",
-				overrides = {
-					templates = {
-						folder = "~/repositories/garden/content/Templates",
-					},
-				},
-			},
+			-- {
+			-- 	name = "garden",
+			-- 	path = "~/repositories/garden/content",
+			-- 	overrides = {
+			-- 		templates = {
+			-- 			folder = "~/repositories/garden/content/Templates",
+			-- 		},
+			-- 	},
+			-- },
 			{
 				name = "notes",
 				path = "~/repositories/obsidian",

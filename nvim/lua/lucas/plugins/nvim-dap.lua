@@ -2,6 +2,7 @@ return {
 	{
 		"mfussenegger/nvim-dap",
 		recommended = true,
+		event = "VeryLazy",
 		desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 
 		dependencies = {

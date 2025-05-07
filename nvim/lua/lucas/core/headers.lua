@@ -432,4 +432,4 @@ local eldrich = [[
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⢤⠼⠁⠀⠀⠳⣤⡼⠀⠀⠀⠀⠀⠀
     ]]
 
-return eldrich
+return night_fury
