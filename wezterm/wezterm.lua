@@ -4,11 +4,12 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
-config.color_scheme = "Catppuccin Frappe"
-config.colors = {
-	background = "#000000",
-	foreground = "#ffffff",
-}
+-- config.color_scheme = "Tokyo Night Moon"
+config.color_scheme = "Catppuccin Macchiato"
+-- config.colors = {
+-- 	background = "#000000",
+-- 	foreground = "#ffffff",
+-- }
 
 -- Font
 config.font = wezterm.font("JetBrains Mono NL")
