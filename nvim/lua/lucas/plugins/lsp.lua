@@ -1,15 +1,23 @@
 return {
 	"neovim/nvim-lspconfig",
+	event = { "BufReadPre", "BufNewFile" }, -- Load on buffer read or new file
 	dependencies = {
-		"stevearc/conform.nvim",
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/nvim-cmp",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		{ "stevearc/conform.nvim", opts = {} },
+		{ "williamboman/mason.nvim", cmd = "Mason" }, -- Load Mason only on :Mason
+		{
+			"williamboman/mason-lspconfig.nvim",
+			event = { "BufReadPre", "BufNewFile" },
+		},
+		{ "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" }, -- Load with CMP
+		{ "hrsh7th/nvim-cmp", event = "InsertEnter" },
+		{
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+			event = { "BufReadPre", "BufNewFile" },
+		},
 	},
 	config = function()
 		require("mason").setup({})
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"html",
@@ -19,26 +27,37 @@ return {
 				"bashls",
 				"yamlls",
 			},
+			automatic_installation = true,
+
+			handlers = {
+				function(server_name) -- default handler (optional)
+					require("lspconfig")[server_name].setup({
+						capabilities = capabilities,
+					})
+				end,
+			},
 		})
 		require("mason-tool-installer").setup({
 			ensure_installed = {
 				"prettier",
 				-- PYTHON
-				"blue", -- less uncompromising python formatter than black
-				"debugpy", -- implementation of the debug adapter protocol for python
-				"pyright", -- static type checker for python
-				"isort", -- organize imports alphabetically
-				"python-lsp-server", -- fork of the python-language-server,
+				"blue",
+				"debugpy",
+				"pyright",
+				"isort",
+				"python-lsp-server",
 				-- LUA
-				"lua-language-server", -- language server with Lua suport
-				"stylua", -- Lua formatter
+				"lua-language-server",
+				"stylua",
 				-- SHELL
-				"shfmt", -- Shell formatter
+				"shfmt",
 				-- YAML
-				"yamllint", -- YAML formatter
+				"yamllint",
 			},
+			auto_update = false, -- Avoid synchronous checks at startup
 		})
 
+		-- Diagnostic config
 		vim.diagnostic.config({
 			virtual_text = true,
 			signs = true,
@@ -48,7 +67,6 @@ return {
 		})
 
 		-- LSP keybindings
-		-- Only applies those keybindings to files which have an LSP
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(ev)
 				local opts = { buffer = ev.buf }

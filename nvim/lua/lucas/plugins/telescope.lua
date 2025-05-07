@@ -1,12 +1,18 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
+	cmd = "Telescope", -- Load only on :Telescope command
 	dependencies = {
-		"nvim-lua/plenary.nvim",
-		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-		"nvim-tree/nvim-web-devicons",
-		"folke/todo-comments.nvim",
-		"andrew-george/telescope-themes", -- Add the telescope-themes dependency
+		{ "nvim-lua/plenary.nvim", event = "VeryLazy" }, -- Load plenary lazily
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+			event = "VeryLazy",
+		},
+		{ "nvim-tree/nvim-web-devicons", event = "VeryLazy" },
+		{ "folke/todo-comments.nvim", event = "VeryLazy" },
+		{ "andrew-george/telescope-themes", event = "VeryLazy" },
+		{ "folke/trouble.nvim", event = "VeryLazy" }, -- Add trouble as dependency
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -16,32 +22,28 @@ return {
 		local trouble = require("trouble")
 		local trouble_telescope = require("trouble.providers.telescope")
 
-		-- Create your custom action
 		local custom_actions = transform_mod({
 			open_trouble_qflist = function(prompt_bufnr)
 				trouble.toggle("quickfix")
 			end,
 		})
 
-		-- Get the builtin schemes list
-		local builtin_schemes = require("telescope._extensions.themes").builtin_schemes or {}
-
 		telescope.setup({
 			defaults = {
 				path_display = { "smart" },
 				mappings = {
 					i = {
-						["<C-k>"] = actions.move_selection_previous, -- Move to prev result
-						["<C-j>"] = actions.move_selection_next, -- Move to next result
+						["<C-k>"] = actions.move_selection_previous,
+						["<C-j>"] = actions.move_selection_next,
 						["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
-						["<C-t>"] = require("trouble.sources.telescope").smart_open_with_trouble,
+						["<C-t>"] = trouble_telescope.smart_open_with_trouble,
 					},
 				},
 				layout_config = {
 					horizontal = {
-						width = 0.9, -- increase the width
-						height = 0.8, -- increase the height
-						preview_width = 0.6, -- increase the preview window width
+						width = 0.9,
+						height = 0.8,
+						preview_width = 0.6,
 					},
 					vertical = {
 						width = 0.9,
@@ -72,34 +74,30 @@ return {
 			},
 			extensions = {
 				themes = {
-					-- You can add regular telescope config that you want to apply on this picker only
 					layout_config = {
 						horizontal = {
 							width = 0.8,
 							height = 0.7,
 						},
 					},
-
-					-- Extension-specific config
-					enable_previewer = true, -- Show/hide previewer window
-					enable_live_preview = true, -- Enable/disable live preview
-
-					-- All builtin themes are ignored by default
-					ignore = vim.list_extend(builtin_schemes, { "embark" }),
-
+					enable_previewer = true,
+					enable_live_preview = true,
 					persist = {
-						-- Enable persisting last theme choice
 						enabled = true,
-						-- Override path to file that executes colorscheme command
 						path = vim.fn.stdpath("config") .. "/lua/colorscheme.lua",
 					},
 				},
 			},
 		})
 
-		-- Load the fzf extension for Telescope
+		-- Load extensions
 		telescope.load_extension("fzf")
-		-- Load the themes extension for Telescope
 		telescope.load_extension("themes")
 	end,
+	keys = { -- Add keybindings to trigger Telescope
+		{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+		{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
+		{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+		{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
+	},
 }
