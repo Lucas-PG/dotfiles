@@ -1,0 +1,33 @@
+# Cores
+# background = 07080e
+# background = 1f1f1f
+# background = #011423
+# foreground = ffffff
+
+# theme = 
+# background = #232136
+# background = #1D1C28
+
+theme = TokyoNight Moon
+background = #070E15
+
+# Fonte
+font-size = 16
+font-family = JetBrainsMonoNL 
+
+# Clipboard
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = true
+copy-on-select = true
+
+# Outros
+window-decoration = none
+shell-integration = fish
+app-notifications = no-clipboard-copy
+confirm-close-surface = false
+
+background-opacity = 1
+
+cursor-style = block
