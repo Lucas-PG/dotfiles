@@ -57,7 +57,6 @@ vim.pack.add({
 	{ src = "https://github.com/iamcco/markdown-preview.nvim" },
 	{ src = "https://github.com/rose-pine/neovim" },
 
-
 	{ src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
 	{ src = "https://github.com/hrsh7th/cmp-buffer" },
 	{ src = "https://github.com/hrsh7th/cmp-path" },
@@ -123,11 +122,11 @@ end
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
-		vim.api.nvim_set_hl(0, "TelescopeNormal",       { bg = "#1f1d2e" })
-		vim.api.nvim_set_hl(0, "TelescopeBorder",       { bg = "#1f1d2e", fg = "#403d52" })
+		vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "#1f1d2e" })
+		vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "#1f1d2e", fg = "#403d52" })
 		vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "#26233a" })
 		vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = "#26233a", fg = "#403d52" })
-		vim.api.nvim_set_hl(0, "TelescopePromptTitle",  { bg = "#c4a7e7", fg = "#191724" })
+		vim.api.nvim_set_hl(0, "TelescopePromptTitle", { bg = "#c4a7e7", fg = "#191724" })
 		vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { bg = "#1f1d2e", fg = "#908caa" })
 		vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { bg = "#1f1d2e", fg = "#908caa" })
 	end,
@@ -185,7 +184,15 @@ require("mini.indentscope").setup({
 })
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "pyright", "intelephense", "vimls", "html", "clangd", "jdtls" },
+	ensure_installed = {
+		"lua_ls",
+		"pyright",
+		"intelephense",
+		"vimls",
+		"html",
+		"clangd",
+		"jdtls",
+	},
 })
 require("mason-tool-installer").setup({
 	ensure_installed = {
@@ -210,6 +217,8 @@ require("mason-tool-installer").setup({
 		"vimls",
 		"yamlls",
 		"yamllint",
+		"tinymist",
+		"typstyle",
 	},
 })
 
@@ -259,6 +268,7 @@ require("conform").setup({
 		javascript = { "prettier" },
 		typescript = { "prettier" },
 		css = { "prettier" },
+		typst = { "typstyle" },
 	},
 })
 
@@ -300,13 +310,17 @@ local function pack_clean()
 		if failed == 0 then
 			vim.notify(("Removed %d unused plugin(s)."):format(removed), vim.log.levels.INFO)
 		else
-			vim.notify(
-				("Removed %d plugin(s), failed to remove %d."):format(removed, failed),
-				vim.log.levels.WARN
-			)
+			vim.notify(("Removed %d plugin(s), failed to remove %d."):format(removed, failed), vim.log.levels.WARN)
 		end
 	end
 end
+
+vim.keymap.set("n", "<leader>tp", function()
+	local cb = vim.fn.expand("%")
+	local pdf = vim.fn.fnamemodify(cb, ":r") .. ".pdf"
+	vim.fn.jobstart("typst watch " .. cb, { detach = true })
+	vim.fn.jobstart("xdg-open " .. pdf, { detach = true })
+end)
 
 vim.cmd("colorscheme rose-pine")
 
@@ -326,8 +340,8 @@ require("colorizer").setup({})
 local ok_builtin, builtin = pcall(require, "telescope.builtin")
 if ok_builtin then
 	vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
-	vim.keymap.set("n", "<leader>fw", builtin.live_grep,  { desc = "Live grep" })
-	vim.keymap.set("n", "<leader>h",  builtin.help_tags,  { desc = "Help tags" })
+	vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Live grep" })
+	vim.keymap.set("n", "<leader>h", builtin.help_tags, { desc = "Help tags" })
 end
 
 local opts = { noremap = true, silent = true }
