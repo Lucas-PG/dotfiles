@@ -8,8 +8,10 @@
 # background = #232136
 # background = #1D1C28
 
-theme = TokyoNight Moon
-background = #070E15
+theme = TokyoNight Night
+background = #131421
+# background = #070E15
+# background = #0E0E0E
 
 # Fonte
 font-size = 16

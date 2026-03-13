@@ -51,8 +51,7 @@ vim.pack.add({
 	{ src = "https://github.com/hat0uma/csvview.nvim" },
 	{ src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.indentscope" },
-	{ src = "https://github.com/tpope/vim-fugitive" },
-	{ src = "https://github.com/tpope/vim-rhubarb" },
+	{ src = "https://github.com/sindrets/diffview.nvim" },
 	{ src = "https://github.com/mfussenegger/nvim-jdtls" },
 	{ src = "https://github.com/iamcco/markdown-preview.nvim" },
 	{ src = "https://github.com/rose-pine/neovim" },
@@ -67,7 +66,10 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/vim-vscode-snippets" },
 	{ src = "https://github.com/saadparwaiz1/cmp_luasnip" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag" },
+	{ src = "https://github.com/akinsho/bufferline.nvim" },
 })
+
+require("nvim-treesitter").setup()
 
 -- require("vague").setup({
 -- 	transparent = true,
@@ -122,15 +124,24 @@ end
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
-		vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "#1f1d2e" })
-		vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "#1f1d2e", fg = "#403d52" })
-		vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "#26233a" })
-		vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = "#26233a", fg = "#403d52" })
-		vim.api.nvim_set_hl(0, "TelescopePromptTitle", { bg = "#c4a7e7", fg = "#191724" })
-		vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { bg = "#1f1d2e", fg = "#908caa" })
-		vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { bg = "#1f1d2e", fg = "#908caa" })
+		vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "#0E0E19" })
+		vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "#0E0E19", fg = "#292e42" })
+		vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "#16161E" })
+		vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = "#16161E", fg = "#292e42" })
+		vim.api.nvim_set_hl(0, "TelescopePromptTitle", { bg = "#7aa2f7", fg = "#1a1b26" })
+		vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { bg = "#0E0E19", fg = "#565f89" })
+		vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { bg = "#0E0E19", fg = "#565f89" })
+		vim.api.nvim_set_hl(0, "DiffviewNormal", { bg = "#0E0E19" })
+		vim.api.nvim_set_hl(0, "DiffviewFilePanelTitle", { fg = "#7aa2f7", bold = true })
+		vim.api.nvim_set_hl(0, "DiffviewFilePanelCounter", { fg = "#565f89", bold = true })
+		vim.api.nvim_set_hl(0, "DiffviewFilePanelFileName", { fg = "#c0caf5" })
+		vim.api.nvim_set_hl(0, "DiffviewFilePanelPath", { fg = "#565f89" })
+		vim.api.nvim_set_hl(0, "OilFloat",       { bg = "#0E0E19", fg = "#c0caf5" })
+		vim.api.nvim_set_hl(0, "OilFloatBorder", { bg = "#0E0E19", fg = "#292e42" })
 	end,
 })
+
+require("diffview").setup({})
 
 require("oil").setup({
 	lsp_file_methods = {
@@ -145,6 +156,9 @@ require("oil").setup({
 		max_width = 0.7,
 		max_height = 0.6,
 		border = "rounded",
+		win_options = {
+			winhl = "Normal:OilFloat,FloatBorder:OilFloatBorder",
+		},
 	},
 	view_options = {
 		show_hidden = true,
@@ -219,6 +233,7 @@ require("mason-tool-installer").setup({
 		"yamllint",
 		"tinymist",
 		"typstyle",
+		"yamlfmt",
 	},
 })
 
@@ -269,6 +284,7 @@ require("conform").setup({
 		typescript = { "prettier" },
 		css = { "prettier" },
 		typst = { "typstyle" },
+		yaml = { "yamlfmt" },
 	},
 })
 
@@ -322,7 +338,8 @@ vim.keymap.set("n", "<leader>tp", function()
 	vim.fn.jobstart("xdg-open " .. pdf, { detach = true })
 end)
 
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme tokyonight-night")
+vim.cmd("doautocmd ColorScheme")
 
 vim.api.nvim_set_hl(0, "StatusLine", {
 	bg = "#1C1C39",
@@ -337,6 +354,82 @@ vim.api.nvim_set_hl(0, "ColorColumn", {
 })
 require("colorizer").setup({})
 
+local bg_inactive = "#0E0E19"
+local bg_active   = "#16161E"
+local fg_inactive = "#565f89"
+local fg_active   = "#c0caf5"
+local accent      = "#7aa2f7"
+local separator   = "#292e42"
+local modified    = "#e0af68"
+
+local function hl(fg_in, fg_sel, extra_sel)
+	local sel = vim.tbl_extend("force", { fg = fg_sel, bg = bg_active }, extra_sel or {})
+	return { { fg = fg_in, bg = bg_inactive }, { fg = fg_in, bg = bg_inactive }, sel }
+end
+local function apply_hl(t, name, fg_in, fg_sel, extra_sel)
+	local states = hl(fg_in, fg_sel, extra_sel)
+	t[name]                    = states[1]
+	t[name .. "_visible"]      = states[2]
+	t[name .. "_selected"]     = states[3]
+end
+
+local hl_table = {
+	fill               = { bg = bg_inactive },
+	background         = { fg = fg_inactive, bg = bg_inactive },
+	separator          = { fg = separator,   bg = bg_inactive },
+	separator_visible  = { fg = separator,   bg = bg_inactive },
+	separator_selected = { fg = accent,      bg = bg_active },
+	indicator_selected = { fg = accent,      bg = bg_active },
+	buffer_visible     = { fg = fg_inactive, bg = bg_inactive },
+	buffer_selected    = { fg = fg_active,   bg = bg_active, bold = true, italic = false },
+	tab_close          = { fg = fg_inactive, bg = bg_inactive },
+	trunc_marker       = { fg = fg_inactive, bg = bg_inactive },
+}
+
+local bold = { bold = true }
+apply_hl(hl_table, "close_button",      fg_inactive, fg_active)
+apply_hl(hl_table, "modified",          modified,    modified)
+apply_hl(hl_table, "numbers",           fg_inactive, fg_active, bold)
+apply_hl(hl_table, "diagnostic",        fg_inactive, fg_active)
+apply_hl(hl_table, "error",             fg_inactive, fg_active, bold)
+apply_hl(hl_table, "warning",           fg_inactive, fg_active, bold)
+apply_hl(hl_table, "info",              fg_inactive, fg_active, bold)
+apply_hl(hl_table, "hint",              fg_inactive, fg_active, bold)
+apply_hl(hl_table, "error_diagnostic",   "#f7768e",  "#f7768e")
+apply_hl(hl_table, "warning_diagnostic", modified,   modified)
+apply_hl(hl_table, "info_diagnostic",    accent,     accent)
+apply_hl(hl_table, "hint_diagnostic",    fg_inactive, fg_active)
+
+require("bufferline").setup({
+	highlights = hl_table,
+	options = {
+		mode = "buffers",
+		numbers = "none",
+		close_command = "bdelete! %d",
+		right_mouse_command = "bdelete! %d",
+		left_mouse_command = "buffer %d",
+		indicator = { style = "icon", icon = "▎" },
+		buffer_close_icon = "󰅖",
+		modified_icon = "●",
+		close_icon = "",
+		left_trunc_marker = "",
+		right_trunc_marker = "",
+		diagnostics = "nvim_lsp",
+		diagnostics_indicator = function(count, level)
+			local icon = level:match("error") and " " or " "
+			return " " .. icon .. count
+		end,
+		show_buffer_close_icons = true,
+		show_close_icon = true,
+		show_tab_indicators = true,
+		persist_buffer_sort = true,
+		separator_style = "thin",
+		truncate_names = false,
+		always_show_bufferline = true,
+		offsets = {},
+	},
+})
+
 local ok_builtin, builtin = pcall(require, "telescope.builtin")
 if ok_builtin then
 	vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
@@ -347,7 +440,7 @@ end
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<leader>pc", pack_clean)
-vim.keymap.set("n", "<leader>o", ":Oil<CR>")
+vim.keymap.set("n", "<leader>o", require("oil").open_float, { desc = "Open file explorer" })
 vim.keymap.set("n", "<C-c>", ":%y+<CR>")
 vim.keymap.set("n", "<leader>lf", function()
 	require("conform").format({ lsp_fallback = true })
@@ -360,6 +453,8 @@ vim.keymap.set("n", "<leader>sh", "<C-w>s")
 vim.keymap.set("n", "<leader>se", "<C-w>=")
 vim.keymap.set("n", "<leader>sr", ":AutoSession restore<CR>")
 vim.keymap.set("n", "<leader>lg", ":LazyGit<CR>")
+vim.keymap.set("n", "<leader>do", ":DiffviewOpen<CR>", { desc = "Open Diffview" })
+vim.keymap.set("n", "<leader>dx", ":DiffviewClose<CR>", { desc = "Close Diffview" })
 vim.keymap.set("n", "<leader>gh", ":GBrowse<CR>", { desc = "Open on GitHub", noremap = true, silent = true })
 vim.keymap.set("n", "<leader>vrn", function()
 	vim.lsp.buf.rename()
@@ -368,6 +463,13 @@ vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 vim.keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
+vim.keymap.set("n", "<S-l>", ":BufferLineCycleNext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-h>", ":BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
+vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
+vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>bp", ":BufferLineTogglePin<CR>", { desc = "Pin buffer" })
+vim.keymap.set("n", "<leader>bP", ":BufferLineGroupClose ungrouped<CR>", { desc = "Delete non-pinned buffers" })
 
 vim.diagnostic.config({
 	virtual_text = true,
